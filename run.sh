@@ -1,0 +1,1 @@
+FLASK_APP=Interactive_Dashboard/app.py flask run
