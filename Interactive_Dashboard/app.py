@@ -17,7 +17,7 @@ le_ethnicity = load_p(open('Interactive_Dashboard/ml/le_ethnicity.pkl', 'rb'))
 le_age = load_p(open('Interactive_Dashboard/ml/le_age.pkl', 'rb'))
 
 # Run app
-app = Flask(__name__, static_folder="../static")
+app = Flask(__name__, static_folder="Interactive_Dashboard/static")
 
 @app.route("/", methods=["GET", "POST"])
 def home():
