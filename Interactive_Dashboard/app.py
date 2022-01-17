@@ -64,7 +64,7 @@ def home():
 
 @app.route("/summary")
 def summary():
-    return "Hello world!"
+    return render_template("home.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
