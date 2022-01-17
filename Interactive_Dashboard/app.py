@@ -61,6 +61,10 @@ def home():
         print(a)
 
     return render_template("index.html", predict=5 * prediction, form_reuse=a)
-    
+
+@app.route("/summary")
+def summary():
+    return "Hello world!"
+
 if __name__ == "__main__":
     app.run(debug=True)
