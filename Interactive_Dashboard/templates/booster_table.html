@@ -16,15 +16,14 @@
 <table>
   <thead>
     <tr>
-        <th>County Name</th>
+        <th>county_name</th>
         <th>state</th>
         <th>date</th>
         <th>cases</th>
         <th>deaths</th>
-        <th>series_complete_yes</th>
-        <th>series_complete_pop_pct</th>
-        <th>administered_dose1_pop_pct</th>
-        <th>booster_doses_vax_pct</th>
+        <th>completely_vaccinated_population</th>
+        <th>dose_1_population</th>
+        <th>booster_dose_population</th>
     </tr>
     </thead>    
     <tbody>
@@ -37,7 +36,6 @@
                 <td>{{row[4]}}</td>
                 <td>{{row[5]}}</td>
                 <td>{{row[6]}}</td>
-                <td>{{row[7]}}</td>
             </tr>
         {% endfor %}
     </tbody>
