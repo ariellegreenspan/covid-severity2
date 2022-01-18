@@ -67,13 +67,13 @@ def home():
 def summary():
     return render_template("home.html")
 
-@app.route("/booster_table")
-conn = psycopg2.connect(database="data_final_project", user="root",  
-mycursor = conn.cursor()
-def booster_table():
-    mycursor.execute("SELECT * FROM booster_table")
-    data = mycursor.fetchall()
-    return render_template('booster_table.html', data=data)
+#@app.route("/booster_table")
+#conn = psycopg2.connect(database="data_final_project", user="root",  
+#mycursor = conn.cursor()
+#def booster_table():
+    #mycursor.execute("SELECT * FROM booster_table")
+    #data = mycursor.fetchall()
+    #return render_template('booster_table.html', data=data)
 
 if __name__ == "__main__":
     app.run(debug=True)
