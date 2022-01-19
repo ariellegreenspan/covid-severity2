@@ -17,6 +17,7 @@ le_state = load_p(open('Interactive_Dashboard/ml/le_state.pkl', 'rb'))
 le_race = load_p(open('Interactive_Dashboard/ml/le_race.pkl', 'rb'))
 le_ethnicity = load_p(open('Interactive_Dashboard/ml/le_ethnicity.pkl', 'rb'))
 le_age = load_p(open('Interactive_Dashboard/ml/le_age.pkl', 'rb'))
+mycursor =conn.cursor()
 
 # Run app
 app = Flask(__name__)
@@ -86,10 +87,10 @@ def summary():
 
 @app.route("/booster_table")
 def booster_table():
-    #mycursor.execute("SELECT * FROM booster_table")
-    #data = mycursor.fetchall()
+    mycursor.execute("SELECT * FROM booster_table")
+    Booster = mycursor.fetchall()
     #print(Booster.query.all()[0:10])
-    return render_template('booster_table.html', Booster = Booster.query.all())
+    return render_template('booster_table.html', Booster = Booster)
 
 if __name__ == "__main__":
     app.run(debug=True)
