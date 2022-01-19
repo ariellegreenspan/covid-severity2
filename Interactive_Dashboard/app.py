@@ -91,5 +91,5 @@ def booster_table():
     print(Booster.query.all()[0:10])
     #return render_template('booster_table.html', data=data)
 
-    if __name__ == "__main__":
+if __name__ == "__main__":
     app.run(debug=True)
