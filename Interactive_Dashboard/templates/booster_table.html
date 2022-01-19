@@ -30,14 +30,14 @@
       <tbody>
             {% for booster in Booster %}
                <tr>
-                  <td>{{ Booster.county_name }}</td>
-                  <td>{{ Booster.state }}</td>
-                  <td>{{ Booster.date }}</td>
-                  <td>{{ student.cases }}</td>
-                  <td>{{ Booster.deaths }}</td>
-                  <td>{{ Booster.completely_vaccinated_population }}</td>
-                  <td>{{ Booster.dose_1_population }}</td>
-                  <td>{{ Booster.booster_dose_population }}</td>
+                  <td>{{ booster.county_name }}</td>
+                  <td>{{ booster.state }}</td>
+                  <td>{{ booster.date }}</td>
+                  <td>{{ booster.cases }}</td>
+                  <td>{{ booster.deaths }}</td>
+                  <td>{{ booster.completely_vaccinated_population }}</td>
+                  <td>{{ booster.dose_1_population }}</td>
+                  <td>{{ booster.booster_dose_population }}</td>
                </tr>
             {% endfor %}
        </tbody>
