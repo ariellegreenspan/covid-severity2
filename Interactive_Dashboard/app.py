@@ -88,8 +88,8 @@ def summary():
 def booster_table():
     #mycursor.execute("SELECT * FROM booster_table")
     #data = mycursor.fetchall()
-    print(Booster.query.all()[0:10])
-    #return render_template('booster_table.html', data=data)
+    #print(Booster.query.all()[0:10])
+    return render_template('booster_table.html', Booster = Booster.query.all())
 
 if __name__ == "__main__":
     app.run(debug=True)
