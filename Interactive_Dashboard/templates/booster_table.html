@@ -27,18 +27,20 @@
     </tr>
     </thead>    
     <tbody>
-     {% for row in data %}    
-            <tr>
-                <td>{{row[0]}}</td>
-                <td>{{row[1]}}</td>
-                <td>{{row[2]}}</td>
-                <td>{{row[3]}}</td>
-                <td>{{row[4]}}</td>
-                <td>{{row[5]}}</td>
-                <td>{{row[6]}}</td>
-            </tr>
-        {% endfor %}
-    </tbody>
+      <tbody>
+            {% for booster in Booster %}
+               <tr>
+                  <td>{{ Booster.county_name }}</td>
+                  <td>{{ Booster.state }}</td>
+                  <td>{{ Booster.date }}</td>
+                  <td>{{ student.cases }}</td>
+                  <td>{{ Booster.deaths }}</td>
+                  <td>{{ Booster.completely_vaccinated_population }}</td>
+                  <td>{{ Booster.dose_1_population }}</td>
+                  <td>{{ Booster.booster_dose_population }}</td>
+               </tr>
+            {% endfor %}
+       </tbody>
 </table>
 </body>
 </html>
