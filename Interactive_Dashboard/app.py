@@ -2,6 +2,7 @@
 from flask import Flask, render_template, jsonify, json, request, redirect
 from joblib import dump, load
 from pickle import dump as dump_p, load as load_p
+from flask_sqlalchemy import SQLAlchemy
 import numpy as np
 import pandas as pd
 import os
@@ -19,7 +20,23 @@ le_age = load_p(open('Interactive_Dashboard/ml/le_age.pkl', 'rb'))
 
 # Run app
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('FINAL_PROJECT_DATA', '')
 
+# Remove tracking modifications
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+class Booster(db.Model):
+    __tablename__ = 'booster_table'
+
+    county_name = db.Column(db.String, primary_key=True)
+    state = db.Column(db.String)
+    cases = db.Column(db.Integer)
+    deaths = db.Column(db.Integer)
+    completely_vaccinated_population = db.Column(db.Numeric)
+    dose_1_population = db.Column(db.Numeric)
+    booster_dose_population = db.Column(db.Numeric)
+    
 @app.route("/", methods=["GET", "POST"])
 def home():
     prediction = 0
@@ -67,7 +84,7 @@ def home():
 def summary():
     return render_template("home.html")
 
-#@app.route("/booster_table")
+@app.route("/booster_table")
 #conn = psycopg2.connect(database="data_final_project", user="root",  
 #mycursor = conn.cursor()
 #def booster_table():
