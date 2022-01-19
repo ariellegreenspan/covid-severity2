@@ -86,8 +86,8 @@ def summary():
 
 @app.route("/booster_table")
 def booster_table():
-    mycursor.execute("SELECT * FROM booster_table")
-    data = mycursor.fetchall()
+    #mycursor.execute("SELECT * FROM booster_table")
+    #data = mycursor.fetchall()
     print(Booster.query.all()[0:10])
     #return render_template('booster_table.html', data=data)
 
