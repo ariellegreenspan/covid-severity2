@@ -36,7 +36,7 @@ function create_gauge_plot(score) {
             xanchor: 'center',
             y: -0.2,
             yanchor: 'center',
-            text: "The gauge displays your risk level<br>of dying from COVID-19. <br> 0-1 = very low risk <br> 1-2 = low risk <br> 2-3 = moderate risk <br> 3-4 = moderate-high risk <br> 4-5 = high risk",
+            text: "0-1 = very low risk <br> 1-2 = low risk <br> 2-3 = moderate risk <br> 3-4 = moderate-high risk <br> 4-5 = high risk",
             showarrow: false
         }]
     };
